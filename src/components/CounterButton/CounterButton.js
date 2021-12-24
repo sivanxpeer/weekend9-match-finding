@@ -30,7 +30,8 @@ export class CounterButton extends Component {
             this.setState({ likes: stateTemp.likes, imageURL: stateTemp.imageURL, index: stateTemp.index });
             const img=this.changeImageAndDesc(stateTemp.index);
             return (<div>
-                <img src={img.imageURL}></img>
+                <img alt={""} src={img.imageURL}></img>
+                {img.description}
             </div>
             )
         }
