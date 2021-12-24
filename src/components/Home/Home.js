@@ -25,7 +25,7 @@ export class Home extends Component {
                 {this.printData()}
                 <div className="main-container">
                     <div className="image">
-                        {this.getDataImage()}
+                        {this.getDataImage(Home.index)}
                     </div>
                     <div className="description">
                         {this.getDataDescription()}
