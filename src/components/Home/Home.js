@@ -8,13 +8,10 @@ export class Home extends Component {
         console.log(data);
     }
     getDataImage = (i=0) => {
-        let button = new CounterButton();
         const obj = {};
-        obj.index = i+1;
+        obj.index = i;
         obj.imageURL = data[obj.index].imageURL;
-        button.setState({imageURL: obj.imageURL,index: obj.index})
-        console.log(button.state);
-        return (<img src={obj.imageURL} style={{ width: "200px", height: "200px" }}></img>);
+        return (<img src={obj.imageURL} alt={""} style={{ width: "200px", height: "200px" }}></img>);
     }
     getDataDescription = () => {
         const obj = {};
