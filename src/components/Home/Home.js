@@ -3,20 +3,18 @@ import { data } from '../Api';
 import CounterButton from '../CounterButton/CounterButton';
 import './Home.css';
 
-
-//todo- catch items name and items id and display to screen one of them 
-//make a button to go to other data 
-
-
 export class Home extends Component {
-
     printData = () => {
         console.log(data);
     }
-    getDataImage = () => {
+    getDataImage = (i=0) => {
+        let button = new CounterButton();
         const obj = {};
-            obj.imageURL = data[0].imageURL;
-        return (<img src={obj.imageURL}  style={{ width: "200px", height: "200px" }}></img>);
+        obj.index = i+1;
+        obj.imageURL = data[obj.index].imageURL;
+        button.setState({imageURL: obj.imageURL,index: obj.index})
+        console.log(button.state);
+        return (<img src={obj.imageURL} style={{ width: "200px", height: "200px" }}></img>);
     }
     getDataDescription = () => {
         const obj = {};
