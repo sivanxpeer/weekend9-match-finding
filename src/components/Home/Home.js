@@ -4,20 +4,13 @@ import CounterButton from '../CounterButton/CounterButton';
 import './Home.css';
 
 export class Home extends Component {
-    printData = () => {
-        console.log(data);
+    printData = (item) => {
+        // console.log(data);
+        data.forEach(() => {
+            this.getDataImage();
+            this.getDataDescription();
+        })
     }
-
-
-    // getObjFromData=()=>{
-    //     let button = new CounterButton();
-    //     const obj = {};
-    //     obj.index = button.state.index;
-    //     obj.imageURL = data[obj.index].imageURL;
-    //     obj.description=button.state.description;
-    //     // return (<img src={obj.imageURL} alt={""} style={{ width: "200px", height: "200px" }}></img>);
-    //     return ob
-    // }
 
     getDataImage = () => {
         const obj = {};
@@ -27,7 +20,7 @@ export class Home extends Component {
     }
     getDataDescription = () => {
         const obj = {};
-        obj.index=0;
+        obj.index = 0;
         obj.description = data[obj.index].description;
         return (obj.description);
     }
@@ -38,7 +31,10 @@ export class Home extends Component {
                 {this.printData()}
                 <div className="main-container">
                     <div className="image">
-                        {this.getDataImage()}
+                        <img func={this.props.handleLike} src="" alt={""}>
+                        </img >
+                            {this.getDataImage()}
+                        {this.printData()}
                     </div>
                     <div className="description">
                         {this.getDataDescription()}

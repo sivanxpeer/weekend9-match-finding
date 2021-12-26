@@ -19,7 +19,7 @@ export const data = [{
 {
     imageURL: "https://images.unsplash.com/photo-1640185953208-a7a271efb55f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
     description: "woman opening trunck",
-    currentImageId: 3,
+    currentImageId: 4,
 
 }
 ]
