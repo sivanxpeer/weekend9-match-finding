@@ -4,22 +4,34 @@ import CounterButton from '../CounterButton/CounterButton';
 import './Home.css';
 
 export class Home extends Component {
-    state = { likes: 0, dislikes: 0, index: 0, isActive: false };
+    state = { likes: 0, dislikes: 0, index: 0 };
 
     handleLike = (counter) => {
-    this.setState((prevState) => ({
+        if (data[this.state.index]) {
+        this.setState((prevState) => ({
             [counter]: prevState[counter] += 1,
             index: prevState.index += 1
         }));
         return [counter];
+        }
+        else return;
     };
+
+    // isDataEnd() {
+        // if (!data[this.state.index]) {
+            // return (<div className="image"><img className="ii" src={"https://www.kindpng.com/picc/m/253-2530327_oops-there-is-nothing-to-show-hd-png.png"} alt={""}></img></div>);
+            // return (<img src="https://cdn.dribbble.com/users/2666881/screenshots/11346959/media/eea44d0bd2ba581f2087172a3891caba.png?compress=1&resize=400x300"></img>)}
+            // ;
+        
+        // return false;
+    // }
 
     getDataImage = (i) => {
         const imageURL = data[i].imageURL;
         console.log(imageURL);
-        return (<img src={imageURL} alt={""} style={{ width: "200px", height: "200px" }}></img>);
+        return (<img className={"ii"} src={imageURL} alt={""} style={{ width: "200px", height: "200px" }}></img>);
     };
-
+    
     getDataDescription = (i) => {
         const description = data[i].description;
         return (<div>{description}</div>);
@@ -30,7 +42,7 @@ export class Home extends Component {
             <div className="Home">
                 <div className="main-container">
                     <div className="image">
-                        <img src="" alt={""}>
+                        <img className="ii" src="" alt={""}>
                         </img >
                         {this.getDataImage(this.state.index)}
                     </div>
