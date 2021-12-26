@@ -7,7 +7,6 @@ export class Home extends Component {
     state = { likes: 0, dislikes: 0, index: 0, isActive: false };
 
     handleLike = (counter) => {
-        
     this.setState((prevState) => ({
             [counter]: prevState[counter] += 1,
             index: prevState.index += 1
@@ -40,15 +39,15 @@ export class Home extends Component {
                     </div>
                     <div className="buttons">
                         <CounterButton
-                            clickHandler={() => { this.handleLike(this.state.likes) }}
+                            clickHandler={() => { this.handleLike('likes') }}
                             buttonname="Like"
                             numOfLikes={this.state.likes}
                             counter={this.state.likes}
                         />
                         <CounterButton
-                            clickHandler={() => { this.handleLike('unlikes') }}
+                            clickHandler={() => { this.handleLike('dislikes') }}
                             buttonname="Unlike"
-                            numOfDislikes={this.state.dislikes}
+                            numOfLikes={this.state.dislikes}
                             counter={this.state.dislikes}
                         />
                     </div>

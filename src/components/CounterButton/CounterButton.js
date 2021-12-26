@@ -6,10 +6,10 @@ export class CounterButton extends Component {
         return (
             <div>
                 <div className="count-likes">
+                    {/* {this.props.numOfLikes} */}
                     {this.props.numOfLikes}
-                    {this.props.numOfDislikes}
                 </div>
-                <button onClick={this.props.clickHandler}>{this.props.buttonname}</button>
+                <button onClick={this.props.clickHandler} f={this.props.numOfLikes}>{this.props.buttonname} </button>
             </div>
         )
     }
